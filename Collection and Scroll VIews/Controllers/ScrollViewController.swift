@@ -11,19 +11,38 @@ class ScrollViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initViews()
 
-        // Do any additional setup after loading the view.
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//   Mark: - Method
+    
+    func initViews(){
+        addNavigationBar()
     }
-    */
+    
+    func addNavigationBar(){
+        let back = UIImage(named: "ic_back")
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: back, style: .plain, target: self, action: #selector(rightTapped))
+        title = "Scroll View"
+    }
+    
+    
+//    Mark: - Action
+    
+    @objc func rightTapped(){
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
+    
+//    Mark: -
+    
+    
 
 }
+
